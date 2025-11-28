@@ -2,55 +2,840 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Digital Electronics Summary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Electronics Study Guide - NIT Algeria</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #fafbff; color: #222; line-height: 1.6; }
-    .container { max-width: 700px; margin: 2em auto; padding: 2em; background: #fff; border-radius: 10px; box-shadow: 0 2px 12px #0001;}
-    h1 { color: #d65821; }
-    h2 { color: #3686d3; }
-    ul { margin-bottom: 1.5em; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 20px;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+    
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    
+    .content {
+      padding: 40px;
+    }
+    
+    .chapter {
+      margin-bottom: 40px;
+      padding: 30px;
+      background: #f8f9fa;
+      border-radius: 15px;
+      border-left: 5px solid #667eea;
+    }
+    
+    .chapter h2 {
+      color: #667eea;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
+    
+    .section {
+      margin: 20px 0;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+    }
+    
+    .section h3 {
+      color: #764ba2;
+      margin-bottom: 15px;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+    
+    th {
+      background: #667eea;
+      color: white;
+    }
+    
+    tr:nth-child(even) {
+      background: #f2f2f2;
+    }
+    
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    
+    .box {
+      padding: 20px;
+      background: #e3f2fd;
+      border-radius: 10px;
+      border-left: 4px solid #2196F3;
+    }
+    
+    .box h4 {
+      color: #1976D2;
+      margin-bottom: 10px;
+    }
+    
+    .highlight {
+      background: #fff3cd;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #ffc107;
+      margin: 15px 0;
+    }
+    
+    ul, ol {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+    
+    li {
+      margin: 8px 0;
+    }
+    
+    .formula {
+      background: #e8f5e9;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.2em;
+      margin: 15px 0;
+      border: 2px solid #4caf50;
+    }
   </style>
 </head>
 <body>
-<div class="container">
-<h1>Digital Electronics: Quick Chapter Summary</h1>
-
-<h2>Chapter 1: What is a Computer? (Hardware vs Software)</h2>
-<ul>
-  <li>Defines a computer as a device that takes input, processes data, stores information, and produces output (IPSO model).</li>
-  <li>Distinguishes hardware as physical components, software as the instructions that run on the hardware, and firmware as the bridge between them.</li>
-  <li>Shows how layers (user, software, OS, drivers, hardware) interact in real scenarios like typing and saving documents.</li>
-</ul>
-
-<h2>Chapter 2: Motherboards: Evolution & Functions</h2>
-<ul>
-  <li>The motherboard is the main circuit board connecting all internal parts and ensuring communication between CPU, RAM, storage, and peripherals.</li>
-  <li>Discusses motherboard sizes, chipsets, expansion slots, connectivity, and BIOS/UEFI chips.</li>
-  <li>Explains differences between desktop/mainboard and smartphone (system-on-a-chip) approaches, plus key points for choosing a motherboard.</li>
-</ul>
-
-<h2>Chapter 3: Chipsets, BIOS/UEFI & The Boot Process</h2>
-<ul>
-  <li>Chipsets manage data between CPU, memory, storage, and I/O ports; modern designs merge Northbridge functions into the CPU.</li>
-  <li>Explains the step-by-step boot process: power-up, POST (hardware checks), finding the boot device, loading bootloader, then loading the OS.</li>
-  <li>Compares BIOS and UEFI (interface, speed, drive size limits, security). BIOS stores settings in CMOS RAM powered by the motherboard battery.</li>
-</ul>
-
-<h2>Chapter 4: CPU—From Logical Architecture to Silicon</h2>
-<ul>
-  <li>The CPU is the "brain" of the computer, executing billions of instructions per second.</li>
-  <li>Describes core components: Control Unit (CU), Arithmetic Logic Unit (ALU), registers (fast internal memory for operations).</li>
-  <li>Covers instruction cycles (fetch, decode, execute, store), clock speed, CPI (cycles per instruction), and performance optimization methods like pipelining and caching.</li>
-  <li>Outlines CPU development from logical design to physical silicon, including wafer production and packaging.</li>
-</ul>
-
-<h2>Chapter 5: Memory—RAM, ROM, Cache, Storage Hierarchy</h2>
-<ul>
-  <li>Memory types: RAM (fast, volatile), ROM (non-volatile, startup code), cache (very fast, inside CPU), SSD/HDD (permanent, large, slowest).</li>
-  <li>Explains memory hierarchy (registers, cache, RAM, storage) as the balance between speed and cost.</li>
-  <li>Discusses practical aspects: choosing RAM and SSD, advantages of SSD over HDD, memory in smartphones, and flash memory cell types (SLC, MLC, TLC, QLC).</li>
-</ul>
-
-</div>
+  <div class="container">
+    <header>
+      <h1>💻 Digital Electronics Study Guide</h1>
+      <p>Complete Revision Notes - NIT Algeria</p>
+    </header>
+    
+    <div class="content">
+      
+      <!-- Chapter 1 -->
+      <div class="chapter">
+        <h2>Chapter 1: What is a Computer? Hardware vs Software</h2>
+        
+        <div class="section">
+          <h3>Definition of a Computer</h3>
+          <p>A computer is an <strong>electronic device designed to process data</strong>. It takes in information, works on it, and then gives us a result.</p>
+          <p>Every single action a computer performs, from opening a web page to playing a video, follows the IPSO cycle.</p>
+        </div>
+        
+        <div class="section">
+          <h3>The IPSO Model</h3>
+          <p><strong>Input, Process, Storage, Output</strong> - This model applies to everything from a basic calculator to the most powerful supercomputer.</p>
+          <ul>
+            <li><strong>Input:</strong> How we feed data or instructions into the computer (keyboards, mice, microphones, touchscreens)</li>
+            <li><strong>Process:</strong> The computer's brain, the CPU, performs calculations and manipulates data based on instructions</li>
+            <li><strong>Storage:</strong> Where the computer keeps data and programs, both temporarily (RAM) and permanently (HDD/SSD)</li>
+            <li><strong>Output:</strong> How the computer presents results back to us (screens, speakers, printers, or controlling other devices)</li>
+          </ul>
+        </div>
+        
+        <div class="section">
+          <h3>The Three Layers</h3>
+          <table>
+            <tr>
+              <th>Layer</th>
+              <th>Description</th>
+              <th>Examples</th>
+            </tr>
+            <tr>
+              <td><strong>Hardware</strong></td>
+              <td>Everything physical about a computer - anything you can literally touch</td>
+              <td>CPU, RAM, Motherboard, Keyboard, Monitor</td>
+            </tr>
+            <tr>
+              <td><strong>Software</strong></td>
+              <td>Set of instructions or programs that tells the hardware what to do (intangible)</td>
+              <td>Windows, macOS, Chrome, Word</td>
+            </tr>
+            <tr>
+              <td><strong>Firmware</strong></td>
+              <td>Special software permanently programmed into hardware - the bridge between them</td>
+              <td>BIOS/UEFI</td>
+            </tr>
+          </table>
+        </div>
+        
+        <div class="section">
+          <h3>Software Types</h3>
+          <div class="comparison">
+            <div class="box">
+              <h4>System Software</h4>
+              <p>Manages the computer resources</p>
+              <p><strong>Examples:</strong> Operating Systems (Windows, macOS, Android)</p>
+            </div>
+            <div class="box">
+              <h4>Application Software</h4>
+              <p>Performs specific tasks for the user</p>
+              <p><strong>Examples:</strong> Microsoft Word, Google Chrome, programs you use to get things done</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h3>How They Interact - The Layered System</h3>
+          <ol>
+            <li>At the top is <strong>you, the User</strong></li>
+            <li>You interact with an <strong>Application</strong></li>
+            <li>That application sends a request to the <strong>Operating System</strong></li>
+            <li>Which then uses <strong>firmware and drivers</strong></li>
+            <li>To give low-level instructions to the <strong>Hardware</strong></li>
+          </ol>
+          <p>This layered approach makes computing efficient and organized.</p>
+        </div>
+        
+        <div class="highlight">
+          <strong>Key Point:</strong> These three layers are completely codependent. Hardware is just metal and plastic without software. Software is just code without hardware to run on. Firmware is the essential glue that lets them talk to each other.
+        </div>
+      </div>
+      
+      <!-- Chapter 2 -->
+      <div class="chapter">
+        <h2>Chapter 2: Motherboards - Evolution & Functions</h2>
+        
+        <div class="section">
+          <h3>What is a Motherboard?</h3>
+          <p>The motherboard is the <strong>main circuit board that every hardware and physical component is plugged to</strong>. If the CPU is the brain, the motherboard is the nervous system, carrying signals and instructions between every single part.</p>
+          <p>Also known as: Mainboard, Logic Board (in Apple products)</p>
+          <p>Without it, the components would be isolated and useless.</p>
+        </div>
+        
+        <div class="section">
+          <h3>Key Functions of the Motherboard</h3>
+          <table>
+            <tr>
+              <th>Function</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td><strong>1. Power Management/Distribution</strong></td>
+              <td>Takes power from the PSU and ensures every component (CPU, RAM, etc.) gets stable electricity with correct voltage</td>
+            </tr>
+            <tr>
+              <td><strong>2. Communication Center</strong></td>
+              <td>A communication hub using a network of electrical pathways called "buses" (data highways) to let components talk to each other</td>
+            </tr>
+            <tr>
+              <td><strong>3. Connectivity</strong></td>
+              <td>Provides ports on the back for external devices/peripherals (USB, Ethernet, Audio)</td>
+            </tr>
+            <tr>
+              <td><strong>4. Expansion</strong></td>
+              <td>Offers slots to add or upgrade components like graphics cards (PCIe slots) and storage</td>
+            </tr>
+          </table>
+        </div>
+        
+        <div class="section">
+          <h3>Major Components on the Motherboard</h3>
+          <ul>
+            <li><strong>CPU Socket:</strong> Large square where the processor fits (must match your CPU brand!)</li>
+            <li><strong>RAM Slots:</strong> For memory sticks (short-term memory)</li>
+            <li><strong>Chipset:</strong> Controls data flow - often under a heatsink (Northbridge + Southbridge or modern PCH)</li>
+            <li><strong>PCIe Slots:</strong> Long slots for GPU and other expansion cards</li>
+            <li><strong>Storage Connectors:</strong> SATA and M.2/NVMe for hard drives and SSDs</li>
+            <li><strong>Power Connectors:</strong> 24-pin and 8-pin to provide electricity</li>
+            <li><strong>Rear I/O Ports:</strong> USB, Ethernet, audio, video outputs</li>
+            <li><strong>BIOS/UEFI Chip:</strong> Stores firmware</li>
+            <li><strong>CMOS Battery:</strong> Coin battery that keeps BIOS settings saved</li>
+          </ul>
+        </div>
+        
+        <div class="section">
+          <h3>Motherboard Form Factors (Sizes)</h3>
+          <table>
+            <tr>
+              <th>Form Factor</th>
+              <th>Description</th>
+              <th>Use Case</th>
+            </tr>
+            <tr>
+              <td><strong>ATX</strong></td>
+              <td>Full-sized, most expansion slots</td>
+              <td>Standard desktops, gaming PCs</td>
+            </tr>
+            <tr>
+              <td><strong>Micro-ATX</strong></td>
+              <td>Smaller, fewer slots</td>
+              <td>Compact builds</td>
+            </tr>
+            <tr>
+              <td><strong>Mini-ITX</strong></td>
+              <td>Very small, minimal slots</td>
+              <td>Tiny PCs, HTPCs</td>
+            </tr>
+          </table>
+          <p><strong>Trade-off:</strong> Size vs. Expandability. Choose based on your case size and upgrade needs.</p>
+        </div>
+        
+        <div class="section">
+          <h3>Chipsets: Communication Hub</h3>
+          <p><strong>Old Design (Two-Chip):</strong></p>
+          <ul>
+            <li><strong>Northbridge:</strong> Fast communication (CPU, RAM, GPU)</li>
+            <li><strong>Southbridge:</strong> Slower tasks (USB, SATA, PCI)</li>
+          </ul>
+          <p><strong>Modern Design:</strong></p>
+          <ul>
+            <li><strong>CPU:</strong> Contains Northbridge functions built-in</li>
+            <li><strong>PCH (Platform Controller Hub):</strong> Single chip manages everything else</li>
+          </ul>
+          <p>This modern design is much faster and more efficient!</p>
+        </div>
+        
+        <div class="highlight">
+          <strong>Buying Tip - CRITICAL:</strong> CPU socket MUST match! Intel CPUs need Intel sockets. AMD CPUs need AMD sockets. They're not interchangeable. Always check compatibility!
+        </div>
+      </div>
+      
+      <!-- Chapter 3 -->
+      <div class="chapter">
+        <h2>Chapter 3: Chipsets, BIOS/UEFI & The Boot Process</h2>
+        
+        <div class="section">
+          <h3>Why Power & Booting Matter</h3>
+          <p>A computer is just a collection of parts until it gets two things:</p>
+          <ol>
+            <li><strong>Stable Power:</strong> The right voltage for each component</li>
+            <li><strong>Instructions:</strong> A wake-up script to get everything started</li>
+          </ol>
+          <p>This process is called <strong>booting</strong>.</p>
+        </div>
+        
+        <div class="section">
+          <h3>BIOS vs UEFI</h3>
+          <table>
+            <tr>
+              <th>Feature</th>
+              <th>BIOS (Old)</th>
+              <th>UEFI (Modern)</th>
+            </tr>
+            <tr>
+              <td>Interface</td>
+              <td>Text-only</td>
+              <td>Graphical, Mouse support</td>
+            </tr>
+            <tr>
+              <td>Boot System</td>
+              <td>MBR (Master Boot Record)</td>
+              <td>GPT (GUID Partition Table)</td>
+            </tr>
+            <tr>
+              <td>Drive Limit</td>
+              <td>2.2 TB max</td>
+              <td>Effectively unlimited</td>
+            </tr>
+            <tr>
+              <td>Speed</td>
+              <td>Slower to initialize</td>
+              <td>Faster (parallel initialization)</td>
+            </tr>
+            <tr>
+              <td>Security</td>
+              <td>Basic password</td>
+              <td>Secure Boot</td>
+            </tr>
+          </table>
+        </div>
+        
+        <div class="section">
+          <h3>The Boot Process - 6 Steps</h3>
+          <ol>
+            <li><strong>Power On:</strong> You press button → PSU sends "power good" signal to motherboard</li>
+            <li><strong>BIOS/UEFI Awakens:</strong> CPU loads firmware from ROM chip</li>
+            <li><strong>POST (Power-On Self-Test):</strong> BIOS checks critical hardware (CPU, RAM, GPU). Beep codes or LED indicators show errors</li>
+            <li><strong>Find Boot Device:</strong> BIOS checks boot priority (1. SSD, 2. USB, etc.)</li>
+            <li><strong>Load Bootloader:</strong> Finds bootloader on storage device and hands over control</li>
+            <li><strong>OS Loads:</strong> Bootloader loads Windows/Linux/macOS into RAM, OS takes control</li>
+          </ol>
+        </div>
+        
+        <div class="section">
+          <h3>Where Settings Are Saved</h3>
+          <ul>
+            <li><strong>Firmware Program (BIOS/UEFI):</strong> Stored on SPI Flash ROM chip (non-volatile)</li>
+            <li><strong>Your Settings (boot order, time):</strong> Stored in CMOS RAM (volatile - needs power)</li>
+            <li><strong>Coin Battery:</strong> Powers CMOS RAM and Real-Time Clock when PC is off</li>
+          </ul>
+          <div class="highlight">
+            If battery dies: PC still boots, but you must reset time and settings each time!
+          </div>
+        </div>
+        
+        <div class="section">
+          <h3>Power Supply Unit (PSU)</h3>
+          <p>Before anything can boot, it needs power. The PSU converts AC power (from your wall) into stable DC power for components:</p>
+          <ul>
+            <li><strong>+12V:</strong> For power-hungry parts (CPU, GPU)</li>
+            <li><strong>+5V:</strong> For USB ports and some drives</li>
+            <li><strong>+3.3V:</strong> For sensitive chips and RAM</li>
+          </ul>
+          <p><strong>Wattage:</strong> Must be enough to power everything (e.g., 750W for gaming PC)</p>
+        </div>
+      </div>
+      
+      <!-- Chapter 4 -->
+      <div class="chapter">
+        <h2>Chapter 4: CPU - From Logical Architecture to Physical Silicon</h2>
+        
+        <div class="section">
+          <h3>What is the CPU?</h3>
+          <p>The CPU is the <strong>brain of the computer</strong>. Its job is to fetch, interpret, and execute instructions from software at incredible speed - billions of operations per second.</p>
+          <p>Every action you take (moving the mouse, playing music, opening a file) is processed in the CPU.</p>
+        </div>
+        
+        <div class="section">
+          <h3>CPU Core Components</h3>
+          <div class="comparison">
+            <div class="box">
+              <h4>Control Unit (CU)</h4>
+              <p>The manager - fetches and decodes instructions, directs data flow</p>
+            </div>
+            <div class="box">
+              <h4>ALU (Arithmetic Logic Unit)</h4>
+              <p>The mathematician - does all math (add, subtract) and logic (AND, OR, NOT)</p>
+            </div>
+          </div>
+          <div class="box">
+            <h4>Registers</h4>
+            <p>Super-fast memory inside CPU that holds data the ALU is currently working on. Each register is made of flip-flops (1 flip-flop = 1 bit).</p>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h3>Important Registers</h3>
+          <table>
+            <tr>
+              <th>Register</th>
+              <th>Name</th>
+              <th>Function</th>
+            </tr>
+            <tr>
+              <td>PC</td>
+              <td>Program Counter</td>
+              <td>Stores address of NEXT instruction</td>
+            </tr>
+            <tr>
+              <td>IR</td>
+              <td>Instruction Register</td>
+              <td>Holds CURRENT instruction being executed</td>
+            </tr>
+            <tr>
+              <td>AC</td>
+              <td>Accumulator</td>
+              <td>Stores ALU operation results</td>
+            </tr>
+            <tr>
+              <td>MAR</td>
+              <td>Memory Address Register</td>
+              <td>Holds memory address to access</td>
+            </tr>
+            <tr>
+              <td>MDR</td>
+              <td>Memory Data Register</td>
+              <td>Holds data being read/written to memory</td>
+            </tr>
+          </table>
+        </div>
+        
+        <div class="section">
+          <h3>Instruction Cycle - The CPU's Heartbeat</h3>
+          <ol>
+            <li><strong>Fetch:</strong> CU fetches next instruction from memory (using PC)</li>
+            <li><strong>Decode:</strong> CU decodes the instruction (in IR)</li>
+            <li><strong>Execute:</strong> CU sends operation to ALU</li>
+            <li><strong>Store:</strong> Result written to register (AC) or back to memory</li>
+          </ol>
+          <div class="highlight">
+            This cycle repeats BILLIONS of times per second!
+          </div>
+        </div>
+        
+        <div class="section">
+          <h3>Clock Speed</h3>
+          <p><strong>Clock Cycle:</strong> The fundamental "tick" of the CPU</p>
+          <p><strong>Clock Speed (GHz):</strong> Number of cycles per second</p>
+          <ul>
+            <li>1 GHz = 1 billion cycles/second</li>
+            <li>4 GHz CPU = 4 billion ticks/second</li>
+            <li>One cycle time = 1 / 4,000,000,000 = 0.25 nanoseconds!</li>
+          </ul>
+          <div class="formula">Clock Cycle Time = 1 / Clock Speed</div>
+          <p><strong>Important:</strong> 4 GHz ≠ 4 billion instructions/second (due to CPI)</p>
+          
+          <table>
+            <tr>
+              <th>Advantages of High Clock Speed</th>
+              <th>Disadvantages</th>
+            </tr>
+            <tr>
+              <td>• Improved performance<br>• Better multitasking<br>• Greater efficiency</td>
+              <td>• Increased power consumption<br>• More heat generation<br>• Higher cost<br>• Limited by other factors (CPI, RAM speed)</td>
+            </tr>
+          </table>
+        </div>
+        
+        <div class="section">
+          <h3>CPI (Cycles Per Instruction)</h3>
+          <p><strong>Definition:</strong> Average number of clock cycles needed to complete ONE instruction</p>
+          <ul>
+            <li>Simple instruction (ADD): 1 cycle</li>
+            <li>Complex instruction (MULTIPLY): 3 cycles</li>
+            <li>Load from RAM: 100+ cycles!</li>
+          </ul>
+          <p><strong>Goal:</strong> Lower CPI = more efficient CPU</p>
+        </div>
+        
+        <div class="section">
+          <h3>How to Reduce CPI (Make CPU Faster)</h3>
+          <ul>
+            <li><strong>Pipelining:</strong> Overlap execution of multiple instructions</li>
+            <li><strong>Superscalar:</strong> Multiple execution units work in parallel</li>
+            <li><strong>Out-of-Order Execution:</strong> Run instructions in most efficient order</li>
+            <li><strong>Branch Prediction:</strong> Predict program flow to avoid stalls</li>
+            <li><strong>Large Cache:</strong> Reduce slow RAM access</li>
+          </ul>
+        </div>
+        
+        <div class="section">
+          <h3>CPU Performance Equation</h3>
+          <div class="formula">CPU Time = (Instructions × CPI) / Clock Speed</div>
+          <p><strong>To make CPU faster:</strong></p>
+          <ul>
+            <li>↓ Decrease number of instructions (better compiler, efficient ISA)</li>
+            <li>↓ Decrease CPI (better architecture - pipelining, caching)</li>
+            <li>↑ Increase clock speed (but generates more heat!)</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Chapter 5 -->
+      <div class="chapter">
+        <h2>Chapter 5: Memory - RAM, ROM, Cache, Storage Hierarchy</h2>
+        
+        <div class="section">
+          <h3>Why Does Memory Matter?</h3>
+          <p>The CPU is the brain, but <strong>a brain with no memory is useless</strong>. We need:</p>
+          <ul>
+            <li>A place to <strong>work</strong> - short-term memory (RAM)</li>
+            <li>A place to <strong>store things for later</strong> - long-term memory (HDD/SSD)</li>
+          </ul>
+          <p><strong>Bottleneck Analogy:</strong> Imagine a chef (CPU) who can chop 100 vegetables/minute. If you (memory) can only hand him 1 vegetable every 10 seconds, it doesn't matter how fast he is. That slow hand-off is the bottleneck.</p>
+          <div class="highlight">
+            <strong>Bottleneck:</strong> The component that limits overall performance. Your computer is only as fast as its slowest part.
+          </div>
+        </div>
+        
+        <div class="section">
+          <h3>The Memory Hierarchy</h3>
+          <p>Why don't we just use one giant, super-fast memory? <strong>Because it would be impossibly expensive.</strong></p>
+          <table>
+            <tr>
+              <th>Level</th>
+              <th>Location</th>
+              <th>Speed</th>
+              <th>Size</th>
+              <th>Cost per GB</th>
+            </tr>
+            <tr>
+              <td><strong>1. CPU Registers</strong></td>
+              <td>Inside CPU</td>
+              <td>Fastest</td>
+              <td>Bytes</td>
+              <td>Most expensive</td>
+            </tr>
+            <tr>
+              <td><strong>2. Cache (L1, L2, L3)</strong></td>
+              <td>On CPU chip</td>
+              <td>Extremely fast</td>
+              <td>KB to MB</td>
+              <td>Very expensive</td>
+            </tr>
+            <tr>
+              <td><strong>3. RAM</strong></td>
+              <td>On motherboard</td>
+              <td>Fast</td>
+              <td>GB (4-64GB)</td>
+              <td>Moderate</td>
+            </tr>
+            <tr>
+              <td><strong>4. SSD/HDD</strong></td>
+              <td>Connected storage</td>
+              <td>Slower</td>
+              <td>TB (100s of GB+)</td>
+              <td>Cheapest/GB</td>
+            </tr>
+          </table>
+          <p>The system works by moving data between these levels efficiently.</p>
+        </div>
+        
+        <div class="section">
+          <h3>Cache Memory</h3>
+          <p>Cache is the CPU's personal assistant. It's <strong>tiny, super-fast memory built right onto the CPU chip</strong>. It predicts what data the CPU will need next and grabs it from RAM before the CPU even asks.</p>
+          <ul>
+            <li><strong>L1 Cache:</strong> Tiny (KB), fastest, separate Instruction & Data caches</li>
+            <li><strong>L2 Cache:</strong> Larger (KB-MB), slightly slower</li>
+            <li><strong>L3 Cache:</strong> Largest (MB), slowest (still incredibly fast), shared by all CPU cores</li>
+          </ul>
+          <p>You don't buy cache separately - it's part of the CPU. When buying a CPU, L3 cache size is a key specification.</p>
+        </div>
+        
+        <div class="section">
+          <h3>RAM vs ROM</h3>
+          <table>
+            <tr>
+              <th>Feature</th>
+              <th>RAM (Random Access Memory)</th>
+              <th>ROM (Read-Only Memory)</th>
+            </tr>
+            <tr>
+              <td>Volatility</td>
+              <td>Volatile (loses data when power off)</td>
+              <td>Non-volatile (keeps data)</td>
+            </tr>
+            <tr>
+              <td>Purpose</td>
+              <td>Working memory for OS & apps</td>
+              <td>Stores BIOS/UEFI firmware</td>
+            </tr>
+            <tr>
+              <td>Can Write?</td>
+              <td>Yes (Read & Write)</td>
+              <td>Read-only (or rarely written)</td>
+            </tr>
+            <tr>
+              <td>Speed</td>
+              <td>Fast</td>
+              <td>Slower</td>
+            </tr>
+          </table>
+          <p><strong>Key Point:</strong> When you double-click an icon, the program moves from slow storage to fast RAM so the CPU can work on it. You must SAVE your work to move it from volatile RAM to permanent storage!</p>
+        </div>
+        
+        <div class="section">
+          <h3>How to Choose RAM</h3>
+          <ol>
+            <li><strong>Form Factor:</strong> DIMM (desktops) or SO-DIMM (laptops)</li>
+            <li><strong>Generation:</strong> DDR3, DDR4, or DDR5 - MUST match motherboard!</li>
+            <li><strong>Capacity:</strong>
+              <ul>
+                <li>8GB: Bare minimum</li>
+                <li>16GB: Sweet spot for most users</li>
+                <li>32GB: Heavy multitasking, developers</li>
+              </ul>
+            </li>
+            <li><strong>Speed:</strong> 3200MHz, 6000MHz - faster is better if motherboard supports</li>
+            <li><strong>Configuration:</strong> Buy in pairs (2x8GB better than 1x16GB) for dual-channel bandwidth doubling</li>
+          </ol>
+        </div>
+        
+        <div class="section">
+          <h3>HDD vs SSD</h3>
+          <table>
+            <tr>
+              <th>Feature</th>
+              <th>HDD (Hard Disk Drive)</th>
+              <th>SSD (Solid State Drive)</th>
+            </tr>
+            <tr>
+              <td>Technology</td>
+              <td>Spinning magnetic platters</td>
+              <td>Flash memory chips (NAND)</td>
+            </tr>
+            <tr>
+              <td>Speed</td>
+              <td>50-150 MB/s</td>
+              <td>500-7000+ MB/s</td>
+            </tr>
+            <tr>
+              <td>Boot Time</td>
+              <td>40-90 seconds</td>
+              <td>7-15 seconds</td>
+            </tr>
+            <tr>
+              <td>Durability</td>
+              <td>Fragile (moving parts)</td>
+              <td>Shock resistant (no moving parts)</td>
+            </tr>
+            <tr>
+              <td>Noise</td>
+              <td>Whirring/clicking</td>
+              <td>100% silent</td>
+            </tr>
+            <tr>
+              <td>Cost</td>
+              <td>Very cheap</td>
+              <td>More expensive per GB</td>
+            </tr>
+            <tr>
+              <td>Best For</td>
+              <td>Bulk storage, backups</td>
+              <td>OS, applications, speed</td>
+            </tr>
+          </table>
+          <div class="highlight">
+            <strong>RULE:</strong> Use an SSD for your Windows/OS and apps. Use an HDD only for storing photos, videos, and backups.
+          </div>
+        </div>
+        
+        <div class="section">
+          <h3>Upgrade Decision Guide</h3>
+          <div class="comparison">
+            <div class="box">
+              <h4>Upgrade to SSD if:</h4>
+              <ul>
+                <li>PC is slow to boot</li>
+                <li>Apps take 30+ seconds to load</li>
+                <li>You hear clicking/spinning</li>
+                <li>Task Manager shows 100% disk usage</li>
+              </ul>
+              <p><strong>Result:</strong> Biggest speed improvement! Boot: 60s → 10s</p>
+            </div>
+            <div class="box">
+              <h4>Upgrade RAM if:</h4>
+              <ul>
+                <li>PC boots fast but lags with many tabs</li>
+                <li>Slow when running multiple apps</li>
+                <li>Task Manager shows 90%+ RAM usage</li>
+              </ul>
+              <p><strong>Result:</strong> Better multitasking, can run more programs</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h3>Flash Memory Types (Inside SSDs)</h3>
+          <table>
+            <tr>
+              <th>Type</th>
+              <th>Bits/Cell</th>
+              <th>Speed</th>
+              <th>Durability</th>
+              <th>Use Case</th>
+            </tr>
+            <tr>
+              <td>SLC</td>
+              <td>1</td>
+              <td>Fastest</td>
+              <td>100K cycles</td>
+              <td>Enterprise servers</td>
+            </tr>
+            <tr>
+              <td>MLC</td>
+              <td>2</td>
+              <td>Fast</td>
+              <td>10K cycles</td>
+              <td>High-end consumer</td>
+            </tr>
+            <tr>
+              <td>TLC</td>
+              <td>3</td>
+              <td>Standard</td>
+              <td>3K cycles</td>
+              <td>Most consumer SSDs</td>
+            </tr>
+            <tr>
+              <td>QLC</td>
+              <td>4</td>
+              <td>Slower</td>
+              <td>1K cycles</td>
+              <td>Budget drives</td>
+            </tr>
+          </table>
+          <p><strong>Note:</strong> TLC is the standard for most good SSDs today.</p>
+        </div>
+      </div>
+      
+      <!-- Quick Reference -->
+      <div class="chapter" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <h2 style="color: white;">🎯 Quick Reference Cheat Sheet</h2>
+        
+        <div class="section" style="background: rgba(255,255,255,0.1); border: 2px solid white;">
+          <h3 style="color: white;">IPSO Model</h3>
+          <p style="font-size: 1.2em;"><strong>I</strong>nput → <strong>P</strong>rocess → <strong>S</strong>torage → <strong>O</strong>utput</p>
+        </div>
+        
+        <div class="section" style="background: rgba(255,255,255,0.1); border: 2px solid white;">
+          <h3 style="color: white;">Boot Process (6 Steps)</h3>
+          <ol>
+            <li>Power button → PSU "power good"</li>
+            <li>CPU loads BIOS/UEFI from ROM</li>
+            <li>POST checks hardware</li>
+            <li>Find boot device</li>
+            <li>Load bootloader</li>
+            <li>Bootloader loads OS into RAM</li>
+          </ol>
+        </div>
+        
+        <div class="section" style="background: rgba(255,255,255,0.1); border: 2px solid white;">
+          <h3 style="color: white;">CPU Performance Formula</h3>
+          <div class="formula" style="background: rgba(255,255,255,0.2); color: white; border-color: white;">
+            CPU Time = (Instructions × CPI) / Clock Speed
+          </div>
+          <p>To speed up: ↓ Instructions, ↓ CPI, or ↑ Clock Speed</p>
+        </div>
+        
+        <div class="section" style="background: rgba(255,255,255,0.1); border: 2px solid white;">
+          <h3 style="color: white;">Key Registers</h3>
+          <ul>
+            <li><strong>PC:</strong> Program Counter (next instruction)</li>
+            <li><strong>IR:</strong> Instruction Register (current instruction)</li>
+            <li><strong>AC:</strong> Accumulator (ALU results)</li>
+            <li><strong>MAR:</strong> Memory Address Register</li>
+            <li><strong>MDR:</strong> Memory Data Register</li>
+          </ul>
+        </div>
+        
+        <div class="section" style="background: rgba(255,255,255,0.1); border: 2px solid white;">
+          <h3 style="color: white;">Instruction Cycle</h3>
+          <p style="font-size: 1.2em;"><strong>Fetch → Decode → Execute → Store</strong></p>
+          <p>(Repeats billions of times per second!)</p>
+        </div>
+      </div>
+      
+    </div>
+    
+    <footer style="background: #333; color: white; padding: 20px; text-align: center;">
+      <p>💻 Digital Electronics Complete Study Guide | NIT Algeria | Good luck with your revision! 🚀</p>
+    </footer>
+  </div>
 </body>
 </html>
